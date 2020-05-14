@@ -84,7 +84,7 @@ set -e
 #     Channel to use for fetching k3s download URL.
 #     Defaults to 'stable'.
 
-GITHUB_URL=https://github.com/rancher/k3s/releases
+GITHUB_URL=https://benn-test-bucket1.s3.amazonaws.com/k3s/releases
 STORAGE_URL=https://storage.googleapis.com/k3s-ci-builds
 DOWNLOADER=
 

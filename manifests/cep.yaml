@@ -1,0 +1,7 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: cep
+  namespace: default
+spec:
+  chart: https://%{KUBERNETES_API}%/static/charts/cep-0.0.677.tgz

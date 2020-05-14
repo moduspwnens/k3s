@@ -6,6 +6,7 @@ cd $(dirname $0)/..
 
 ROOT_VERSION=v0.4.1
 TRAEFIK_VERSION=1.81.0
+CEP_VERSION=0.0.677
 CHARTS_DIR=build/static/charts
 
 mkdir -p ${CHARTS_DIR}
@@ -19,5 +20,8 @@ mkdir -p bin/aux && rm bin/mount && ln -sf ../busybox bin/aux/mount
 
 TRAEFIK_FILE=traefik-${TRAEFIK_VERSION}.tgz
 curl -sfL https://kubernetes-charts.storage.googleapis.com/${TRAEFIK_FILE} -o ${CHARTS_DIR}/${TRAEFIK_FILE}
+
+CEP_FILE=cep-${CEP_VERSION}.tgz
+curl -sfL "https://certes-jenkins.buckets.certesnetworks.com/helm/charts/${CEP_FILE}" -o "${CHARTS_DIR}/${CEP_FILE}" || exit 1
 
 cp scripts/wg-add.sh bin/aux/
